@@ -4,15 +4,16 @@
     <div class="container-sm">
         <div class="row justify-content-center">
         {% for post in all_posts %}
-        <div class="col-7">
-            <div class="card" style="padding: 1rem; margin: 1rem;">
-                <div class="text-center">
-                    <h1 class="card-title">{{ post.title }}</h1>
-                    <p class="badge bg-secondary text-wrap">Tags: {{ post.tags }}</p>
+            <div class="col-7">
+                <div class="card" style="margin-top: 1rem; margin-bottom: 1rem;">
+                    <div>
+                        <h1 class="card-title">{{ post.title }}</h1>
+                        <p class="badge bg-secondary text-wrap">Tags: {{ post.tags }}</p>
+                        <p class="text-wrap">{{ post.pub_date }}</p>
+                    </div>
+                    <div><p class="lead">{{ post.content }}</p></div>
                 </div>
-                <div><p class="lead">{{ post.content }}</p></div>
             </div>
-        </div>
         {% endfor %}
         </div>
     </div>
