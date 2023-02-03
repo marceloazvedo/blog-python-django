@@ -14,7 +14,7 @@ def format_post(post):
     return POST_LIST_TEMPLATE.format(
         title=post.title,
         tags=post.tags,
-        content=post.content,
+        resume=post.resume,
     )
 
 def index(request):
