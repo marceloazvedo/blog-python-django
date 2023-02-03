@@ -26,8 +26,9 @@ def index(request):
 
 def show(request, post_id):
     try:
-        post = Post.objects.get(pk=post_id)
-        output = format_post(post)
+        context = {
+            'post': Post.objects.get(pk=post_id)
+        }
     except Post.DoesNotExist:
         raise Http404("Esse post não existe.")
-    return HttpResponse(output)
+    return render(request, 'posts/show_post.html', context)
