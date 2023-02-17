@@ -3,20 +3,6 @@ from django.shortcuts import render
 
 from .models import Post
 
-POST_LIST_TEMPLATE = '''
-        <h1>{title}</h1><br>
-        <h3>tags: {tags}</h3><br>
-        <div><i>{content}</i><div>
-        <br>\n
-    '''
-
-def format_post(post):
-    return POST_LIST_TEMPLATE.format(
-        title=post.title,
-        tags=post.tags,
-        resume=post.resume,
-    )
-
 def index(request):
     context = {
         'all_posts': Post.objects.order_by('-pub_date')
